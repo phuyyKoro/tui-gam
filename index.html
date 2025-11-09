@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÚI GẤM QUÂN SƯ - Khổng Minh Diệu Kế</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Popup Giới thiệu -->
+    <div class="intro-popup" id="introPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>⚔️ TÚI GẤM QUÂN SƯ ⚔️</h2>
+                <button class="close-btn" id="closePopup">×</button>
+            </div>
+            <div class="popup-body">
+                <div class="intro-section">
+                    <h3><i class="fas fa-scroll"></i> Ý Nghĩa Lịch Sử</h3>
+                    <p>Trong Tam Quốc, Gia Cát Lượng thường trao cho các tướng lĩnh "túi gấm" chứa đựng diệu kế, chỉ được mở ra khi gặp tình huống nguy cấp. Đó là biểu tượng của trí tuệ, sự chuẩn bị và niềm tin.</p>
+                </div>
+                
+                <div class="intro-section">
+                    <h3><i class="fas fa-fort-awesome"></i> Ứng Dụng Hiện Đại</h3>
+                    <p>Túi Gấm Quân Sư ngày nay là nơi bạn tìm thấy sự bình tâm, động lực và trí tuệ khi đối mặt với:</p>
+                    <ul>
+                        <li><i class="fas fa-shield-alt"></i> Khó khăn, thử thách trong cuộc sống</li>
+                        <li><i class="fas fa-compass"></i> Những khoảnh khắc cần định hướng</li>
+                        <li><i class="fas fa-heart"></i> Khi tâm hồn cần được vỗ về</li>
+                        <li><i class="fas fa-lightbulb"></i> Lúc tìm kiếm cảm hứng mới</li>
+                    </ul>
+                </div>
+                
+                <div class="intro-section">
+                    <h3><i class="fas fa-gift"></i> Món Quà Tinh Thần</h3>
+                    <p>Ứng dụng này được tạo ra như một món quà tinh thần, mang theo những lời hay ý đẹp từ khắp nơi trên thế giới, giúp bạn tìm thấy sự bình yên và sức mạnh nội tâm.</p>
+                </div>
+                
+                <div class="usage-guide">
+                    <h3><i class="fas fa-book-open"></i> Khi Nào Nên Mở Túi Gấm?</h3>
+                    <div class="usage-cards">
+                        <div class="usage-card">
+                            <i class="fas fa-cloud-rain"></i>
+                            <p>Khi cảm thấy mệt mỏi, buồn phiền</p>
+                        </div>
+                        <div class="usage-card">
+                            <i class="fas fa-crosshairs"></i>
+                            <p>Khi cần định hướng, quyết định</p>
+                        </div>
+                        <div class="usage-card">
+                            <i class="fas fa-gem"></i>
+                            <p>Khi muốn tìm cảm hứng tích cực</p>
+                        </div>
+                        <div class="usage-card">
+                            <i class="fas fa-horse"></i>
+                            <p>Bắt đầu ngày mới đầy năng lượng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <label class="dont-show">
+                    <input type="checkbox" id="dontShowAgain">
+                    <span>Không hiện lại lần sau</span>
+                </label>
+                <button class="understand-btn" id="understandBtn"><i class="fas fa-shield-alt"></i> Ta Đã Hiểu - Mở Túi Gấm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="container">
+        <header class="header">
+            <h1 class="title">TÚI GẤM QUÂN SƯ</h1>
+            <div class="subtitle">Gia Cát Lượng Tiên Sinh Diệu Kế</div>
+            <button class="info-btn" id="infoBtn"><i class="fas fa-info"></i></button>
+        </header>
+
+        <main class="main-content">
+            <div class="bag-container">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23D4AF37' d='M100 30 L150 60 L150 140 L100 170 L50 140 L50 60 Z'/%3E%3Cpath fill='%238B0000' d='M100 35 L145 62 L145 138 L100 165 L55 138 L55 62 Z'/%3E%3Cpath fill='%23B8860B' d='M100 40 L140 64 L140 136 L100 160 L60 136 L60 64 Z'/%3E%3C/svg%3E" 
+                     alt="Túi Gấm" class="bag-image" id="bagImage">
+            </div>
+
+            <button class="open-btn" id="openBtn">
+                <span><i class="fas fa-lock-open"></i> MỞ TÚI GẤM</span>
+            </button>
+
+            <div class="quote-container hidden" id="quoteContainer">
+                <div class="scroll-paper">
+                    <p class="quote-text" id="quoteText"></p>
+                    <p class="quote-author" id="quoteAuthor"></p>
+                </div>
+            </div>
+
+            <div class="loading hidden" id="loading">
+                <span><i class="fas fa-brain"></i> Quân sư đang suy nghĩ...</span>
+            </div>
+        </main>
+
+        <div class="controls">
+            <div class="upload-container">
+                <input type="file" id="bgUpload" accept="image/*" class="file-input">
+                <label for="bgUpload" class="upload-btn"><i class="fas fa-image"></i> Đổi Ảnh Nền</label>
+                <button id="resetBg" class="reset-btn"><i class="fas fa-undo"></i> Reset Nền</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p><i class="fas fa-chess-knight"></i> "Binh pháp tối thượng là đánh vào lòng người" - Gia Cát Lượng</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
